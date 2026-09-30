@@ -14,8 +14,6 @@ import { BaristaDashboardView } from './presentation/views/BaristaDashboardView.
 import { BaristaInvoicingView } from './presentation/views/BaristaInvoicingView.tsx';
 import { BaristaProfileView } from './presentation/views/BaristaProfileView.tsx';
 import { ProductDetailModal } from './presentation/components/ProductDetailModal.tsx';
-import { CleanArchitectureExplainer } from './presentation/components/CleanArchitectureExplainer.tsx';
-import { IMAGES } from './infrastructure/mocks/mockData.ts';
 
 const MainLayout: React.FC = () => {
   const {
@@ -28,7 +26,6 @@ const MainLayout: React.FC = () => {
     cart,
     orders,
     toastMessage,
-    setShowArchitectureModal,
   } = useApp();
 
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -48,7 +45,7 @@ const MainLayout: React.FC = () => {
           </span>
         </div>
 
-        {/* Zone 2: Role Switcher & Clean Architecture Badge */}
+        {/* Zone 2: Role Switcher */}
         <div className="flex items-center gap-2">
           {/* Segmented Role Switcher */}
           <div className="p-1 bg-[#efeeea] rounded-xl flex items-center gap-1 shadow-inner">
@@ -81,18 +78,12 @@ const MainLayout: React.FC = () => {
           </div>
         </div>
 
-        {/* Zone 3: Architecture & SOLID Inspector Trigger */}
+        {/* Zone 3: Campus Status */}
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setShowArchitectureModal(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#ffdbc9] text-[#70370e] hover:bg-[#8d4e24] hover:text-white transition-all text-xs font-bold shadow-sm active:scale-95"
-            title="Inspeccionar Capas Clean Architecture y Principios SOLID"
-          >
-            <span className="material-symbols-outlined text-[16px]">account_tree</span>
-            <span className="hidden md:inline">Clean Architecture & SOLID</span>
-            <span className="md:hidden">SOLID</span>
-          </button>
+          <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E8F5E9] text-[#2E7D32] text-xs font-semibold">
+            <span className="w-2 h-2 rounded-full bg-[#2E7D32] animate-pulse" />
+            Barra Abierta
+          </span>
         </div>
       </header>
 
@@ -319,9 +310,6 @@ const MainLayout: React.FC = () => {
 
       {/* Product Detail Customization Modal */}
       <ProductDetailModal />
-
-      {/* Clean Architecture & SOLID Explainer Modal */}
-      <CleanArchitectureExplainer />
 
       {/* Micro-interaction Toast */}
       {toastMessage && (

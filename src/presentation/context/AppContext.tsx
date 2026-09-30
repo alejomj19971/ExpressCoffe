@@ -26,8 +26,6 @@ interface AppContextType {
   setStudentTab: (tab: 'explorar' | 'carrito' | 'pedidos' | 'perfil') => void;
   baristaTab: 'kanban' | 'dashboard' | 'catalogo' | 'facturas' | 'perfil';
   setBaristaTab: (tab: 'kanban' | 'dashboard' | 'catalogo' | 'facturas' | 'perfil') => void;
-  showArchitectureModal: boolean;
-  setShowArchitectureModal: (show: boolean) => void;
 
   // Products
   products: Product[];
@@ -79,7 +77,6 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const [currentRole, setCurrentRole] = useState<'student' | 'barista'>('student');
   const [studentTab, setStudentTab] = useState<'explorar' | 'carrito' | 'pedidos' | 'perfil'>('explorar');
   const [baristaTab, setBaristaTab] = useState<'kanban' | 'dashboard' | 'catalogo' | 'facturas' | 'perfil'>('kanban');
-  const [showArchitectureModal, setShowArchitectureModal] = useState<boolean>(false);
 
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedProductForModal, setSelectedProductForModal] = useState<Product | null>(null);
@@ -312,8 +309,6 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         setStudentTab,
         baristaTab,
         setBaristaTab,
-        showArchitectureModal,
-        setShowArchitectureModal,
 
         products,
         selectedProductForModal,
