@@ -1,0 +1,6 @@
+{
+  "name": "Café Campus - Clean Architecture POS & Order System",
+  "description": "Sistema de gestión de cafetería universitaria siguiendo Clean Architecture y principios SOLID, con entidades Product y Order, lógica de aplicación y UI de punto de venta y catálogo móvil.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
